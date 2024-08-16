@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "7ff6f615-c70d-442b-bfdc-d0477b4aef22",
+		"name": "my-library-ITO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register user [librarian]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmNDUxOWNhZGU5NWQ2ZmY3ODE5NGUiLCJleHAiOjE3MjM4MTg1NDgsImlhdCI6MTcyMzgxMTM0OH0.ttbbF0vuvXoZVwTt_CKBqLqiPgAN3cOXsyC4IyzXkcI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"hamiltonjuarezlibrarian2@gmail.com\",\n    \"password\": \"passworduser1\",\n    \"confirmPassword\": \"passworduser1\",\n    \"role\": \"librarian\",\n    \"firstName\": \"first\",\n    \"lastName\": \"librarian\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login [librarian/student]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"hamiltonjuarezlibrarian@gmail.com\",\n    \"password\": \"passworduser1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create new book [librarian]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmNDUxOWNhZGU5NWQ2ZmY3ODE5NGUiLCJleHAiOjE3MjM4MjY4NTksImlhdCI6MTcyMzgxOTY1OX0.89kwn6vbx3dGYval_h3ikMojgaH5EEWraJI3e3RJZMk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"IT\",\n    \"author\": \"Stephen Kinkg\",\n    \"stock\": 30,\n    \"synapsis\": \"a killer clown on the loose\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get available books [student]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmNDUxOWNhZGU5NWQ2ZmY3ODE5NGUiLCJleHAiOjE3MjM4MjY4NTksImlhdCI6MTcyMzgxOTY1OX0.89kwn6vbx3dGYval_h3ikMojgaH5EEWraJI3e3RJZMk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get specific book details [student]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmM2IwZDUwNzg0MmI3NmM5ZDY4MDAiLCJleHAiOjE3MjM4MjczNzksImlhdCI6MTcyMzgyMDE3OX0.zrA7JznU1JzT19rI1i8rMPGyKGBsFbhwjZx6vn11TSA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/books/66bf669eff929020e9a55ef2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"66bf669eff929020e9a55ef2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout a book [student]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmM2IwZDUwNzg0MmI3NmM5ZDY4MDAiLCJleHAiOjE3MjM4MjczNzksImlhdCI6MTcyMzgyMDE3OX0.zrA7JznU1JzT19rI1i8rMPGyKGBsFbhwjZx6vn11TSA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/books/checkout/66bf669eff929020e9a55ef2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"checkout",
+						"66bf669eff929020e9a55ef2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return a book [librarian]",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmJmNDUxOWNhZGU5NWQ2ZmY3ODE5NGUiLCJleHAiOjE3MjM4MzQ5NDcsImlhdCI6MTcyMzgyNzc0N30.TUv1mmiVV7zh0g5GLEZyCkm5LyYRrjDmfEyn3DPtfBM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": \"66bf669eff929020e9a55ef2\",\n    \"userEmail\": \"hamiltonjuarez98@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/books/return/66bf669eff929020e9a55ef2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"return",
+						"66bf669eff929020e9a55ef2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
